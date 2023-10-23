@@ -13,3 +13,12 @@ vai vir a pasta node_modules e o package-lock.json, por isso eu n preciso
 copiar eles em um novo projeto
 
 depois dei um npm run dev
+
+
+depois dei um git add -A
+git commit -a -m 'adicionado package-lock.json'
+git push
+isso para enviar o package-lock.json para o meu github
+
+agora eu vou refatorar o meu codigo, refatorar é pegar o codigo e fazer
+ele de uma forma mais elaborada, mais otimizada
