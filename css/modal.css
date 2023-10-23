@@ -1,0 +1,91 @@
+/*<!--FIXME: UM MODAL é quando eu clico em algum lugar e aparece uma janela sobre tudo para fazer login, ou cadastrar, ou algum
+    anuncio, e etc-->*/
+.modal-container{
+    height: 100vh;/*FIXME: VH É TOTAL DA ALTURA DA TELA*/ /*FIXME: Fosse 100%, creio q iria pegar 100% relativo ao tamanho
+    dos itens*/
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;/*FIXME: O position fixed, que em português significa fixo, 
+    faz com que o elemento que recebeu esta propriedade 
+    não se mova na tela. Mesmo que uma página tenha rolamento (scroll).*/
+    top: 0;
+    left: 0;
+    z-index: 2000;/*FIXME: Coloquei 2000 para ficar na frente de tudo*/
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal-container.ativo{
+    display: flex;
+}
+.modal{
+    background-color: white;
+    padding: 40px;
+    border: 10px solid #FB5;
+    box-shadow: 0 0 0 10px white;/*FIXME: da impressao de borda, mas nao é borda, 10px ali é como a sombra se propaga se me lembro*/
+    position: relative;
+    min-width: 300px;
+}
+@keyframes modal {
+    from{
+        opacity: 0;
+        transform: translate3d(0,-30px,0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+.ativo .modal{
+    animation: modal .3s forwards;
+}
+.fechar{
+    width: 50px;
+    height: 50px;
+    border: 4px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: -30px;/*FIXME: como a borda tem 10px e a sombra tem 10px, se eu colocasse top e right de -20px iria ficar certinho 
+    no inicio*/
+    right: -30px;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);/*4px para baixo e 4px no nivel de borrado, e nao quero chapado, por isso coloquei 0*/
+    background-color: #E54;
+    font-size: 1.2em;
+    color: white;
+    font-family: 'IBM Plex Mono', monospace;
+    cursor: pointer;
+}
+
+.modal label {
+    font-family: 'IBM Plex Mono',monospace;
+    display: block;/*FIXME: Display block é para cair, no caso o 'input' n vai ficar na mesma linha*/
+    /*FIXME: IMPORTANTE o normal é sem esse display block e sem o width 100% na input, se n tivesse isso, iria ficar
+    email input senha e input tudo do lado do outro. Se tivesse apenas width de 100% no input sem o display block, entao a input
+    pegaria um tamanho igual fosse 'email imput senha e input' pois o programa tentaria colocar tudo do lado do outro, mas n conseguiria
+    ja que a input está com 100% da largura, já se eu colocar um display block aqui entao n vai pegar essa largura do
+    'email imput senha e input' já que o 'input' vai cair, já que o label é display block*/
+    font-weight: bold;
+    margin: 1rem 0 0.5rem 0;
+}
+.modal input{
+    width: 100%; /*100% Da largura da div pai sem contar o padding, porem acaba passando um pouco por causa do padding, por isso uso
+    o border-box*/
+    box-sizing: border-box;/*FIXME: IMPORTANTE O width:100%; deveria pegar somente 100% da largura do item pai, porém vai acabar estourando por
+    causa do padding do .modal, entao uso o border-box para que esse input nao pega mais além do que é permitido, no caso ele só
+    pode pegar 100% do width do item pai e nao o padding junto//Acho que é isso//FIXME: Eu consigo ver essa diferença diminuindo a tela*/
+}
+.modal button[type="submit"]{/*FIXME: Estou selecionando por atributo*/
+    display: block;/*FIXME: IMPORTANTE o meu input tem 100% de width, entao n tem espaço para o button ficar do lado, como
+    estou usando 100% de width ele acaba usando a largura que era reservada para o button já que o meu button por
+    padrao é inline, e dando display block no button, então essa largura
+    nao existe mais reservada, fazendo com que a largura do input diminua*/
+    background-color: #E54;
+    border: none;
+    border-radius: 4px;
+    padding: .7rem 2rem;
+    font-size: 1rem;
+    color: white;
+    font-family: 'IBM Plex Mono',monospace;
+    margin: 1rem;
+    font-weight: bold;
+}

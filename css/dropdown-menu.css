@@ -1,0 +1,57 @@
+[data-dropdown]{
+    position: relative;
+}
+.dropdown-menu{
+    position: absolute;/*FIXME: somente com o position absolute já nao fica destruindo mais o meu menu principal, sem nada
+    fica relativo ao topo do site*/
+    /*como coloquei position relative vai ficar relativo ao li do meu site*/
+    /*FIXME: IMPORTANTE ao fazer esses position relative com absolute, ele tira o display flex dos li, entao fica um item
+    a baixo do outro*/
+    background-color: #E54;
+    border: 2px solid #333;
+    z-index: 200;/*para ficar a cima de tudo*/
+    top: 38px;/*FIXME: IMPORTANTE tenho que colocar numa distancia para nao ficar nenhum gap, no caso
+    esse menu dropdown-menu nao fica desgrudado da minha li, se eu colocar um background-color
+    na minha li eu vou entender, pq se o top aqui for muito grande a quantidade de pixels quando
+    o usuario colocar o mouse para baixo para pegar o menu entao vai acabar saindo do menu*/
+}
+[data-dropdown] .dropdown-menu{
+    display: none;
+}
+/*FIXME: Quando eu dar hover no [data-dropdown] que é minha
+li, entao vai dar display block no .dropdown-menu que é minha
+ul. FIXME: ou quando [data-dropdown] tiver a classe 'active' vai dar um display block
+no .dropdown-menu*/
+[data-dropdown]:hover .dropdown-menu,/*FIXME: IMPORTANTE IMPORTANTE Se fosse apenas o hover aqui,
+sem a parte do javascript do .active, entao quando eu saissse do mouse da li ou da ul entao ja sumiria
+o meu dropdown-menu, mas como eu coloquei o javascript, entao se eu clicar na li, eu preciso clicar nela novamente para
+sair, ou fora dela*/
+[data-dropdown].active .dropdown-menu{
+    display: block;
+    animation: show-up .3s forwards;
+}
+@keyframes show-up{
+    from{
+        opacity: 0;
+        transform:translate3d(0,30px,0);
+    }
+    to{
+        opacity: 1;
+        transform:translate3d(0,0,0);
+    }
+}
+.dropdown-menu::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    width: 0px;/*FIXME: IMPORTANTE se eu nao dar nada de width e height e colocar bordar, elas vao sair em forma
+    de triangulos*/
+    height: 0px;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    border-bottom: 10px solid #E54;
+}
+.dropdown-menu li a:hover{
+    color: white;
+}

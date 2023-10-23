@@ -1,0 +1,13 @@
+foi copiado tudo do projeto babel pra ca menos o node_modules e o package-lock.json
+fiz o git ignore
+no .gitignore coloquei o .DS_Store que é um arquivo que gera no sistema mec
+
+git init
+git add -A
+git commit -a -m 'Project Final' 
+depois criei um repositorio no github, copiei os codigos de la e colei aqui
+
+troquei o name da parte name do package.json
+agora dou um npm install para baixar as dependencias do package.json,
+vai vir a pasta node_modules e o package-lock.json, por isso eu n preciso
+copiar eles num novo projeto

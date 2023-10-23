@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      document.documentElement.className += " js";
+    </script>
+  </head>
+  <body>
+    <!--FIXME: fiz essa div para separar da section nova que eu criei, no caso nao colocar essa na minha 'grid'-->
+    <div class="grid-container">
+      <nav class="menu" data-menu="suave">
+        <button data-menu="button" aria-expanded="false" aria-controls="menu">
+          Menu</button
+        ><!--FIXME:aria-expanded="false" mostra para um leitor de tela que o menu a baixo nao está expandido, e sim
+                escondido-->
+        <!--FIXME: aria-controls="menu" fala o que esse botao está controlando, no caso eu coloco o meu 'id' no caso está controlando o menu,
+                esses dois arias é apenas para acessibilidade, n vai mudar nada no js-->
+        <ul data-menu="list" id="menu">
+          <li><a href="#animais">animais</a></li>
+          <li data-dropdown>
+            <a href="sobre.html">Sobre</a>
+            <ul class="dropdown-menu">
+              <!--FIXME: Só criar uma nova 'ul' que já vai ser um submenu-->
+              <li><a href="empresa.html">A Empresa</a></li>
+              <li><a href="equipe.html">Equipe</a></li>
+              <li><a href="socios.html">Sócios</a></li>
+              <li><a href="investidores.html">Investidores</a></li>
+            </ul>
+          </li>
+          <li><a href="#faq">Faq</a></li>
+          <li><a href="#contato">contato</a></li>
+          <li>
+            <a data-modal="abrir" href="login.com" target="_blank">login</a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="grid-section" data-anime="scroll" id="animais">
+        <h1 class="titulo">Animais Fantásticos</h1>
+        <ul class="list-image" data-tab="menu">
+          <!--FIXME: Coloquei só de exemplo esse title, ele é para aparecer uma frase onde eu coloquei ele caso
+                eu coloco o mouse por cima-->
+          <li><img src="image/imagem1.jpg" alt="imagem1" title="raposa" /></li>
+          <!--FIXME: O atributo global title contém textos representando informações de orientação, relacionados ao elemento a que pertence. Geralmente,
+                     mas não obrigatoriamente, esta informação pode ser apresentada ao usuário como uma dica-->
+          <li><img src="image/imagem2.jpg" alt="imagem2" /></li>
+          <li><img src="image/imagem3.jpg" alt="imagem3" /></li>
+          <li><img src="image/imagem4.jpg" alt="imagem4" /></li>
+          <li><img src="image/imagem5.jpg" alt="imagem5" /></li>
+          <li><img src="image/imagem6.jpg" alt="imagem6" /></li>
+        </ul>
+        <div class="descricao-image" data-tab="content">
+          <section data-anime="show-right">
+            <h2>Raposa</h2>
+            <p>
+              As raposas são animais mamíferos e onívoros pertencentes à família
+              Canidae. São vulpídeos de porte médio, caracterizados por um
+              focinho comprido e uma cauda longa e peluda.
+            </p>
+            <p>
+              Também apresentam como particularidade suas pupilas ovais,
+              semelhantes às pupilas verticais dos felídeos.
+            </p>
+            <p>
+              De cerca de 40 espécies reconhecidas como raposas, somente 12
+              pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a
+              raposa vermelha é a mais comum.
+            </p>
+            <p>
+              Também apresentam como particularidade suas pupilas ovais,
+              semelhantes às pupilas verticais dos felídeos.
+            </p>
+          </section>
+          <section data-anime="show-right">
+            <h2>Esquilo</h2>
+            <p>
+              As raposas são animais mamíferos e onívoros pertencentes à família
+              Canidae. São vulpídeos de porte médio, caracterizados por um
+              focinho comprido e uma cauda longa e peluda.
+            </p>
+            <p>
+              Também apresentam como particularidade suas pupilas ovais,
+              semelhantes às pupilas verticais dos felídeos.
+            </p>
+            <p>
+              De cerca de 40 espécies reconhecidas como raposas, somente 12
+              pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a
+              raposa vermelha é a mais comum.
+            </p>
+            <p>
+              Também apresentam como particularidade suas pupilas ovais,
+              semelhantes às pupilas verticais dos felídeos.
+            </p>
+          </section>
+          <section data-anime="show-down">
+            <h2>Urso</h2>
+            <p>
+              As raposas são animais mamíferos e onívoros pertencentes à família
+              Canidae. São vulpídeos de porte médio, caracterizados por um
+              focinho comprido e uma cauda longa e peluda.
+            </p>
+            <p>
+              Também apresentam como particularidade suas pupilas ovais,
+              semelhantes às pupilas verticais dos felídeos.
+            </p>
+            <p>
+              De cerca de 40 espécies reconhecidas como raposas, somente 12
+              pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a
+              raposa vermelha é a mais comum.
+            </p>
+            <p>
+              Também apresentam como particularidade suas pupilas ovais,
+              semelhantes às pupilas verticais dos felídeos.
+            </p>
+          </section>
+          <section data-anime="show-down">
+            <h2>Lobo</h2>
+            <p>
+              As raposas são animais mamíferos e onívoros pertencentes à família
+              Canidae. São vulpídeos de porte médio, caracterizados por um
+              focinho comprido e uma cauda longa e peluda.
+            </p>
+            <p>
+              Também apresentam como particularidade suas pupilas ovais,
+              semelhantes às pupilas verticais dos felídeos.
+            </p>
+            <p>
+              De cerca de 40 espécies reconhecidas como raposas, somente 12
+              pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a
+              raposa vermelha é a mais comum.
+            </p>
+            <p>
+              Também apresentam como particularidade suas pupilas ovais,
+              semelhantes às pupilas verticais dos felídeos.
+            </p>
+          </section>
+          <section data-anime="show-right">
+            <h2>Macaco</h2>
+            <p>
+              As raposas são animais mamíferos e onívoros pertencentes à família
+              Canidae. São vulpídeos de porte médio, caracterizados por um
+              focinho comprido e uma cauda longa e peluda.
+            </p>
+            <p>
+              Também apresentam como particularidade suas pupilas ovais,
+              semelhantes às pupilas verticais dos felídeos.
+            </p>
+            <p>
+              De cerca de 40 espécies reconhecidas como raposas, somente 12
+              pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a
+              raposa vermelha é a mais comum.
+            </p>
+            <p>
+              Também apresentam como particularidade suas pupilas ovais,
+              semelhantes às pupilas verticais dos felídeos.
+            </p>
+          </section>
+          <section data-anime="show-right">
+            <h2>Leao</h2>
+            <p>
+              As raposas são animais mamíferos e onívoros pertencentes à família
+              Canidae. São vulpídeos de porte médio, caracterizados por um
+              focinho comprido e uma cauda longa e peluda.
+            </p>
+            <p>
+              Também apresentam como particularidade suas pupilas ovais,
+              semelhantes às pupilas verticais dos felídeos.
+            </p>
+            <p>
+              De cerca de 40 espécies reconhecidas como raposas, somente 12
+              pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a
+              raposa vermelha é a mais comum.
+            </p>
+            <p>
+              Também apresentam como particularidade suas pupilas ovais,
+              semelhantes às pupilas verticais dos felídeos.
+            </p>
+          </section>
+        </div>
+      </section>
+
+      <section class="grid-section faq" data-anime="scroll" id="faq">
+        <h1 class="titulo">FAQ</h1>
+        <!--dl é para perguntas e respostas, é como o ul, mas o ul é uma lista nao ordenada, o dl é uma lista com definiçao-->
+        <dl class="faq-lista" data-anime="accordion">
+          <!--dt é o termo que vou definir ou seja a pergunta-->
+          <dt>Qual a idade dos animais?</dt>
+          <!--dd é a descrição, já que o dl é uma lista com definição-->
+          <dd>
+            As raposas são animais mamíferos e onívoros pertencentes à família
+            Canidae. São vulpídeos de porte médio, caracterizados por um focinho
+            comprido e uma cauda longa e peluda.
+          </dd>
+
+          <dt>Eles são fantásticos?</dt>
+          <dd>
+            Também apresentam como particularidade suas pupilas ovais,
+            semelhantes às pupilas verticais dos felídeos.
+          </dd>
+
+          <dt>Qual a diferença?</dt>
+          <dd>
+            As raposas são animais mamíferos e onívoros pertencentes à família
+            Canidae. São vulpídeos de porte médio, caracterizados por um focinho
+            comprido e uma cauda longa e peluda.
+          </dd>
+
+          <dt>Como proteger?</dt>
+          <dd>
+            Também apresentam como particularidade suas pupilas ovais,
+            semelhantes às pupilas verticais dos felídeos.
+          </dd>
+        </dl>
+      </section>
+      <section class="grid-section numeros" data-anime="scroll">
+        <h1 class="titulo">Números</h1>
+        <div class="numeros-grid"></div>
+      </section>
+      <section class="grid-section contato" data-anime="scroll" id="contato">
+        <h1 class="titulo">Contato</h1>
+        <!--FIXME: n preciso colocar valor dentro do atributo data-tooltip, FIXME:a informação que vai dentro da data-tooltip eu vou
+            colocar dentro do 'aria label' que é quase a mesma coisa que o 'title' porem n aparece as informações para todos usuarios e sim
+        somente para os leitores de tela// ao fazer isso melhora a usabilidade para os leitores de tela//e assim vou poder estilizar do jeito que eu quero-->
+        <div
+          class="mapa"
+          data-tooltip
+          aria-label="Endereço próximo aoa estacionamento"
+        >
+          <!--FIXME: IMPORTANTE eu entendi que eu usei esse arial-label para
+            pessoas que sao leitores de tela, e usei tambem para n ter que usar o title que iria aparecer na tela as informações, como eu quis eu mesmo modificar
+        entao usei o data-tooltip para mexer com javascript, e o que tem dentro de aria-label que é meu texto, assim podendo aparecer para quem é leitor de tela
+    a mensagem que tem dentro do aria-label e uma mensagem personalizada para quem nao é leitor de tela-->
+          <img src="image/mapa.png" alt="mapa" />
+        </div>
+        <ul class="contato-list">
+          <li>contato@origamid.com</li>
+          <li>+55 (21) 9999-9999</li>
+          <li>Rua do Conde, nº 21</li>
+          <li>Rio de Janeiro - RJ</li>
+          <li>Doe <span class="btc-preco">0</span> bitcoin para nos ajudar</li>
+          <!--esse data-semana é um data atributo-->
+          <li data-semana="1,2,3,4,5" data-horario="8,18">
+            Seg à Sex das 8 às 18
+          </li>
+        </ul>
+      </section>
+
+      <footer class="copy">
+        <p>Todos os direitos reservados.</p>
+      </footer>
+    </div>
+    <!--FIXME: UM MODAL é quando eu clico em algum lugar e aparece uma janela sobre tudo para fazer login, ou cadastrar, ou algum
+    anuncio, e etc-->
+    <section class="modal-container" data-modal="container">
+      <div class="modal">
+        <button data-modal="fechar" class="fechar">X</button>
+        <form action="">
+          <label for="email">Email</label>
+          <input type="text" form="email" id="email" />
+          <label for="senha">Senha</label>
+          <input type="password" form="senha" id="senha" />
+          <button type="submit" Entrar>Entrar</button>
+        </form>
+      </div>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>

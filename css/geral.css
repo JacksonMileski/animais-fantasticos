@@ -1,0 +1,304 @@
+/*----------------------------DATASET-----------------------------*/
+[data-cor]{
+    color: blue;
+}
+/*FIXME: PODERIA SER ASSIM COMO ESTÁ A BAIXO
+[data-cor="azul"]{
+    color: blue;
+}
+ou
+[data-cor^="azul"]{ FIXME: que comece com azul
+    color: blue;
+}
+
+*/
+/*----------------------------DATASET-----------------------------*/
+body,ul,li,h1,h2,h3,p,dd,dt,dl{
+    padding: 0;
+    margin:0;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+body{
+    background-color: #faf6ed;
+    color: #222;
+     /*por padrao o broser tenta me retorna a tipografia suave, e eu vou tirar isso*/
+    -webkit-font-smoothing:antialiased;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 120px minmax(300px,800px) 1fr;/*n tem virgula*/
+}
+img{
+    /*display block para eu poder colocar o max-width em 100% para a imagem ficar responsiva, no caso nao
+    ultrapassar o container q ela estiver*/
+    display: block;
+    max-width: 100%;
+}
+.menu{
+    grid-column: 3/5;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: #fd5;
+}
+.menu ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;/*cresce a ul*/
+}
+.menu li a{
+    display: block;
+    margin-right: 10px;
+    padding: 10px;/*cresci o 'a'*/
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: #222;
+    letter-spacing: .1rem;
+}
+
+/*---------------------------------------------------grid-section------------------------------------------*/
+
+.grid-section{
+    grid-column: 2/4;/*n tem necessidade de pegar até a liha 5*/
+    display: grid;
+    grid-template-columns: 90px 300px 1fr;
+    grid-gap: 20px; /*vai ser na esquerda e em cima esse gap, n pegando no h1*/
+    padding: 10px;/*vai encolher os itens que estao dentro do meu grid-section*/
+    box-sizing: border-box;/*para n crescer e sim diminuir o conteúdo q está dentro, mesmo usando padding e etc*/
+    margin-bottom: 4rem;
+}
+.titulo{
+    font-family: 'Playfair Display SC', georgia;
+    font-size: 6rem;
+    line-height: 1;
+    font-weight: 400;/*por padrao o h1 vem com bold para tirar é só colocar 400*/
+    margin-bottom: 1rem;
+    grid-column:1/4;
+}
+.list-image{
+    height: 370px;
+    overflow-y: scroll;
+    grid-column: 2;
+}
+.list-image li{
+    cursor: pointer;
+}
+/*para personalizar a scrollbar, coloquei com 18px de largura, mas ai some a cor dela
+eu poderia colocar um background-color, mas ficaria feio*/
+.list-image::-webkit-scrollbar{/*largura do scrollbar*/
+    width: 18px;
+}
+.list-image::-webkit-scrollbar-thumb{/*estilizar a scrollbar com a cor*/
+    background-color: #fb5;
+    border-left: 4px solid #faf6ed;
+    border-right: 4px solid #faf6ed;
+}
+.list-image::-webkit-scrollbar-track{
+    background-color: #faf6ed;/*cor de fundo*/
+}
+.descricao-image{
+    grid-column: 3;
+}
+
+.descricao-image h2::before{
+    content:'';
+    display: inline-block;/*para ficar na mesma linha que o h2*/
+    height: 10px;
+    width: 30px;
+    background-color: orange;
+    margin-right: 10px;
+}
+.descricao-image h2{
+    margin-bottom: 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color:#e54;
+}
+.faq-lista{
+    grid-column: 2/4;
+}
+.faq-lista dt{
+    font-family: 'IBM Plex Mono',monospace;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color:#e54;
+}
+.faq-lista dt::before{
+    content:'';
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    background-color: #fb5;
+    margin-right: 10px;
+}
+.faq-lista dd{
+    font-family: Helvetica, Arial;
+    margin-bottom: 1rem;
+    margin-left: 30px;/*como o item do before tem 20px mais a margin de 10px, entao da 30px, como eu quero
+    colocar o dd na mesma distancia do dt, entao ovu dar 30px de margin-left*/
+}
+.mapa{
+    grid-column: 2;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+.contato-list{
+    grid-column: 3;
+    margin-top: 2rem;
+    margin-left: 20px;
+}
+.contato-list li::before{
+    content:'';
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    background-color: #fb5;
+    margin-right: 10px;
+}
+.contato-list li{
+    font-family: Helvetica, Arial;
+    margin-bottom: 1rem;
+}
+.copy{
+    grid-column: 3/5;/*o copy nao está dentro do grid-section que tem aquelas grids a mais, entao por isso tenho q contar desde o inico as linas*/
+    background-color: #fb5;
+    margin-bottom: 2rem;
+}
+.copy p{
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    padding: 20px;
+}
+/*----------------------------------JS-----------------------------------------*/
+.js [data-tab="content"] section{/*FIXME: Só vai dar display none se a pessoa estiver com o js aberto, pq o codigo
+    que está no meu index.html está atribuindo uma classe ao html chamada 'js' que é essa que estou usando aqui
+    ou seja, para funcionar esse display none a pessoa precisa ter javascript*/
+    display: none;
+}
+/*section.ativo pq é quando tiver a classe ativo*/
+[data-tab="content"] section.ativo {
+    display: block !important;
+}
+/*FIXME: Para fazer sem javaScript ficaria assim
+[data-tab="content"] section.ativo[data-anime="show-right"]{//FIXME: O ATIVO QUE TIVE ESSA DATA VAI DAR A ANIMAÇÃO
+    animation: show-right .5s forwards;
+}
+*/
+[data-tab="content"] section.ativo.show-right{/*FIXME: TEM classe show-right com a ativo*/
+    animation: show-right .5s forwards;
+}
+[data-tab="content"] section.ativo.show-down{/*FIXME: TEM classe show-down com a ativo*/
+    animation: show-down .5s forwards;
+}
+@keyframes show-right{
+    from{
+        opacity: 0;/*vai começar com opacidade 0*/
+        transform: translate3d(-30px,0,0);/*eixo x, eixo y, e eixo z, começa menos 30px para esquerda*/
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+@keyframes show-down{
+    from{
+        opacity: 0;/*vai começar com opacidade 0*/
+        transform: translate3d(0,-30px,0);/*começa de cima para baixo*/
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+[data-anime="accordion"] dd{
+    display: none;
+}
+[data-anime="accordion"] dt::after{
+    content: '↴';
+    margin-left: 10px;
+}
+[data-anime="accordion"] dt.ativo::after{
+    content: '⮥';
+}
+[data-anime="accordion"] dd.ativo{
+    display: block;
+    animation: slideDown .5s forwards;/*forwards para manter no estado final*/
+}
+@keyframes slideDown{
+    from{
+        opacity: 0;
+        max-height: 0;
+    }
+    to{
+        opacity: 1;
+        max-height: 200px;/*FIXME: nao funciona o 'auto', que acho que seria o tamanho padrao, e eu preciso
+        colocar um max-height maior que o conteudo que tenho ali dentro, se nao vai bugar tudo ja que a altura
+        iria ficar menor do que o conteudo*/
+    }
+}
+
+.js [data-anime="scroll"] {/*começa com o .js pq se nao vai ficar com o opacity:1; para a pessoa ver o conteudo caso n tenha js*/
+    opacity: 0;
+    transform: translate3d(-30px,0,0);
+    transition: .3s;/*FIXME: IMPORTANTE O IDEAL É COLOCAR O TRANSITION na entrada aqui, nao no '.ativo' pq quero que anime
+    quando aparecer as sessoes e quando sair*/
+}
+.js [data-anime="scroll"].ativo{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+}
+[data-semana]::after{
+    display: inline-block;
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: #e54;
+    border-radius: 50%;
+    margin-left: 4px;
+    border:2px solid #000;
+}
+[data-semana].aberto::after{
+    background-color: #3F4;
+}
+@media (max-width:700px){
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+   .menu, .grid-section, .copy{
+    grid-column: 1;
+   }
+   .menu{
+    margin-top: 0;
+   }
+   .grid-section{
+    grid-template-columns: 100px 1fr;
+    grid-gap: 10px;
+    }
+    .list-image{
+        grid-column: 1;
+    }
+    .faq-lista, .mapa, .contato-list{/*para ficar no canto esquerdo e pegar do começo 
+        ao fim*/
+        grid-column: 1/3;
+    }
+    .grid-section h1{
+        font-size: 3rem;
+    }
+    .copy{
+        margin-bottom: 0;
+    }
+}
+.btc-preco{
+    background-color: #3F4;
+    padding: .2rem .5rem;
+    font-weight:bold;
+    border-radius: 2px;
+}
