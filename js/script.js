@@ -33,7 +33,8 @@ agora q terminei tudo é legal que a pessoa q usar isso aqui vai poder importar 
 dei um git add -A git commit -a -m 'Scroll transformado em Class' e git merge main depois git push e copiei e colei o codigo,
 que ele cria meu branch no github e envia esse meu codigo pra la, agora vou fazer as etapas de juntar com meu main no site
 do github, depois dei um git main, e um git branch -D 'refator-scrollsuave' já que nao vou mais usar ele, Lembrando que como
-voltar pro git main, eu preciso usar o git pull para puxar as ultimas atualizações do site */
+voltar pro git main, eu preciso usar o git pull para puxar as ultimas atualizações do site 
+preciso dar o git igual eu descrevi no 'accordion.js'*/
 
 const accordion = new Accordion('[data-anime="accordion"] dt');
 accordion.init();
