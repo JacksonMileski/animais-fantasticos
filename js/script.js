@@ -1,5 +1,4 @@
 import ScrollSuave from './modules/scroll-suave.js';
-import initAnimacaoScroll from './modules/scroll-animacao.js';
 import initAccordion from './modules/accordion.js';
 import tabnav from './modules/tabnav.js';
 import { teste1 as nomeDiferente, teste2 } from './modules/teste.js';
@@ -10,6 +9,7 @@ import initMenuMobile from './modules/menu.mobile.js';
 import initFuncionamento from './modules/funcionamento.js';
 import initFetchAnimais from './modules/fetch-animais.js';
 import initFetchBitcoin from './modules/fetch-bitcoin.js';
+import initAnimacaoScroll from './modules/scroll-animacao.js';
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init(); // FIXME: para iniciar
@@ -28,7 +28,12 @@ por exemplo const options = {
 }
 e passo ela no segundo argumento
 
-agora q terminei tudo é legal que a pessoa q usar isso aqui vai poder importar para qualquer site praticamente */
+agora q terminei tudo é legal que a pessoa q usar isso aqui vai poder importar para qualquer site praticamente
+
+dei um git add -A git commit -a -m 'Scroll transformado em Class' e git merge main depois git push e copiei e colei o codigo,
+que ele cria meu branch no github e envia esse meu codigo pra la, agora vou fazer as etapas de juntar com meu main no site
+do github, depois dei um git main, e um git branch -D 'refator-scrollsuave' já que nao vou mais usar ele, Lembrando que como
+voltar pro git main, eu preciso usar o git pull para puxar as ultimas atualizações do site */
 initAnimacaoScroll();
 initAccordion();
 tabnav();
