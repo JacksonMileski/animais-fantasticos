@@ -28,3 +28,4 @@ export default class initAccordion { // FIXME: transformando em uma class
 }
 // FIXME: agora so dar um git add -A git commit -a -m 'Accordion transformado em classe', depois dou um git checkout main
 // e git pull para ver se nao teve diferença nenhuma no codigo, caso n teve eu volto pro meu git checkout refatorar-accordion
+//no caso o git pull baixa no branch que eu estiver as atualizações pelo o que entendi
