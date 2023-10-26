@@ -3,7 +3,7 @@ import Accordion from './modules/accordion.js';
 import TabNav from './modules/tabnav.js';
 import { teste1 as nomeDiferente, teste2 } from './modules/teste.js';
 import Modal from './modules/modal.js';
-import initTooltip from './modules/tooltip.js';
+import Tooltip from './modules/tooltip.js';
 import initDropdownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/menu.mobile.js';
 import initFuncionamento from './modules/funcionamento.js';
@@ -48,9 +48,11 @@ modal.init();
 // e sim quando faz outra coisa, entao ele é ativado, por exemplo se eu fizer modal.toggleModal(); ao iniciar o site
 // já vai estar o toggleModal ativo
 
+const tooltip = new Tooltip('[data-tooltip]');
+tooltip.init();
+
 nomeDiferente();
 teste2();
-initTooltip();
 initDropdownMenu();
 initMenuMobile();
 initFuncionamento();
