@@ -50,7 +50,9 @@ export default class Tooltip {
   onMouseOver({ currentTarget }) { // FIXME: ao inves de fazer em tudo event.currentTarget, eu posso desestruturar o event.currentTarget
     // entao só vou precisar o currentTarget ao inves de event.current target, para isso eu faço {currentTarget}. No caso
     // agora só vou usar currentTarget ao invés de event.CurrentTarget //FIXME: porém agora nao posso mais usar o event
-
+    /* TODO: IMPORTANTE, conversa com o chatgpt onde está indicando que é do objeto event o currentTarget? resposta do chatgpt
+    A razão pela qual currentTarget é acessado dessa forma é porque essa função (onMouseOver) é projetada para ser chamada em resposta a eventos
+    do mouse, e esses eventos normalmente incluem um objeto de evento que possui a propriedade currentTarget. */
     // cria a tooltibox e coloca em uma propriedade
     this.criarTooltipBox(currentTarget);
     currentTarget.addEventListener('mousemove', this.onMouseMove);
