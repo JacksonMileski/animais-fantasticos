@@ -7,7 +7,7 @@ import Tooltip from './modules/tooltip.js';
 import initDropdownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/menu.mobile.js';
 import initFuncionamento from './modules/funcionamento.js';
-import initFetchAnimais from './modules/fetch-animais.js';
+import fetchAnimais from './modules/fetch-animais.js';
 import initFetchBitcoin from './modules/fetch-bitcoin.js';
 import initAnimacaoScroll from './modules/scroll-animacao.js';
 
@@ -56,9 +56,10 @@ teste2();
 initDropdownMenu();
 initMenuMobile();
 initFuncionamento();
-initFetchAnimais();
 initFetchBitcoin();
 initAnimacaoScroll();
+
+fetchAnimais('../../animaisapi.json', '.numeros-grid');
 
 // FIXME: Agora faço o git checkout -b refatorar-accordion e dou o npm run dev, vou fazer o que preciso fazer la
 // igual fiz para scrollSuave
