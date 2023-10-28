@@ -41,5 +41,5 @@ export default function fetchAnimais(url, target) { // FIXME: como n é uma clas
     }
   }
 
-  return criarAnimais();
+  return criarAnimais(); // creio que é para poder usar algum método igual eu fazia com classes
 }
