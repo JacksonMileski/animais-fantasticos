@@ -1,11 +1,15 @@
+import debounce from './debounce';
+
 export default class ScrollAnima {
   /* FIXME: IMPORTANTE antes eu estava verificando toda hora qual era a distancia da section, agora só verifica uma vez,
    porem ainda tem o problema que ativa a função cada vez que dou o scroll, entao na próxima aula vou aprender a tirar isso */
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
     this.windowMetade = window.innerHeight * 0.6;
-
-    this.checkDistance = this.checkDistance.bind(this);
+    // FIXME: agora sim vai ser executado menos vezes a função 'checkDistance'
+    this.checkDistance = debounce(this.checkDistance.bind(this), 200); // pelo o que entendi quando for chamada
+    // a checkDistance vai vir com referencia desse 'this' e vai ser executado o debounce que já vem com ela, eu poderia
+    // ter colocado esse debounce creio que no addEventListener
   }
 
   // FIXME: comentario do cara do curso: Pega a distância de cada item em relaçao
@@ -35,6 +39,8 @@ export default class ScrollAnima {
   // FIXME: comentario do cara do curso: verifica a distância em cada objeto
   // em relação ao scroll do site
   checkDistance() {
+    console.log('teste'); // FIXME: Agora com o debounce checkDistance vai ser ativada poucas vezes graças ao 'debounce',
+    // isso depende do tempo que coloquei no setimeout do debounce que importei
     // window.pageYOffset é onde o scroll está no eixo Y
     this.distance.forEach((item) => { // esse 'item' é meu objeto com o 'element' e 'offset'
       if (window.pageYOffset > item.offset) {
