@@ -7,6 +7,8 @@ export default class ScrollAnima {
     this.sections = document.querySelectorAll(sections);
     this.windowMetade = window.innerHeight * 0.6;
     // FIXME: agora sim vai ser executado menos vezes a função 'checkDistance'
+    // FIXME: esse evento deve ser feito principalmente em evento de scroll e de resize que no caso que é quando
+    // vou fazendo a tela ficar maior e menor
     this.checkDistance = debounce(this.checkDistance.bind(this), 200); // pelo o que entendi quando for chamada
     // a checkDistance vai vir com referencia desse 'this' e vai ser executado o debounce que já vem com ela, eu poderia
     // ter colocado esse debounce creio que no addEventListener
