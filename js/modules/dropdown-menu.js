@@ -1,21 +1,42 @@
 import outsideClick from './outsideclick.js';
-// FIXME: pode acabar dando um erro quando eu faço por exemplo import outsideClick from "./outsideclick.js";
-// pq o programa pode esperar que eu use uma ferramenta para juntar o meu js, e eu n estou fazendo isso
-// no momento, e sim usando o typeModule que é do js, e o typeModule eu preciso colocar a extensao do arquivos
-// q estou usando que é o .js, eu preciso colocar "import/extesions": 0 nos rules
-function handClick(event) {
-  event.preventDefault();
-  this.classList.add('active');
-  outsideClick(this, ['touchstart', 'click'], () => {
-    this.classList.remove('active');
-  });
-}
 
-export default function initDropdownMenu() {
-  const dropdownMenus = document.querySelectorAll('[data-dropdown]');
-  dropdownMenus.forEach((menu) => { // FIXME: na arrowFunction com as chaves, eu  preciso colocar o entreparenses na variavel
-    ['touchstart', 'click'].forEach((userEvent) => {
-      menu.addEventListener(userEvent, handClick);
+export default class initDropdownMenu {
+  constructor(dropdownMenus, events) {
+    this.dropdownMenus = document.querySelectorAll(dropdownMenus);
+
+    // caso a pessoa n defina nada, entao fica nesse padrao
+    if (events === undefined) this.events = ['touchstart', 'click'];
+    else this.events = events; // caso a pessoa tenha definido
+
+    this.activeClass = 'active';
+    // todo event de callback ele está fazendo o bind
+    this.activeDropdownMenu = this.activeDropdownMenu.bind(this);
+  }
+
+  // Ativa o dropdownmenu e adiciona
+  // a função que observa o clique fora dele
+  activeDropdownMenu(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    element.classList.add(this.activeClass);
+    outsideClick(element, this.events, () => {
+      element.classList.remove(this.activeClass);
     });
-  });
+  }
+
+  // adiciona os eventos ao dropdownmenu
+  addDropdownMenuEvent() {
+    this.dropdownMenus.forEach((menu) => {
+      this.events.forEach((userEvent) => {
+        menu.addEventListener(userEvent, this.activeDropdownMenu);
+      });
+    });
+  }
+
+  init() {
+    if (this.dropdownMenus.length) {
+      this.addDropdownMenuEvent();
+    }
+    return this;
+  }
 }

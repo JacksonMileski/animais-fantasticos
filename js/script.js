@@ -4,7 +4,7 @@ import TabNav from './modules/tabnav.js';
 import { teste1 as nomeDiferente, teste2 } from './modules/teste.js';
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
-import initDropdownMenu from './modules/dropdown-menu.js';
+import DropdownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/menu.mobile.js';
 import initFuncionamento from './modules/funcionamento.js';
 import fetchAnimais from './modules/fetch-animais.js';
@@ -55,9 +55,11 @@ const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
 scrollAnima.init();
 // FIXME: scrollAnima.stop(); vai parar a animação ao scroll
 
+const dropdownMenu = new DropdownMenu('[data-dropdown]');
+dropdownMenu.init();
+
 nomeDiferente();
 teste2();
-initDropdownMenu();
 initMenuMobile();
 initFuncionamento();
 
