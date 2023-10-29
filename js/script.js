@@ -8,8 +8,8 @@ import initDropdownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/menu.mobile.js';
 import initFuncionamento from './modules/funcionamento.js';
 import fetchAnimais from './modules/fetch-animais.js';
-import initFetchBitcoin from './modules/fetch-bitcoin.js';
 import initAnimacaoScroll from './modules/scroll-animacao.js';
+import fetchBitcoin from './modules/fetch-bitcoin.js';
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init(); // FIXME: para iniciar
@@ -56,10 +56,10 @@ teste2();
 initDropdownMenu();
 initMenuMobile();
 initFuncionamento();
-initFetchBitcoin();
 initAnimacaoScroll();
 
 fetchAnimais('../../animaisapi.json', '.numeros-grid');
 
 // FIXME: Agora faço o git checkout -b refatorar-accordion e dou o npm run dev, vou fazer o que preciso fazer la
 // igual fiz para scrollSuave
+fetchBitcoin('https://blockchain.info/ticker', '.btc-preco');
