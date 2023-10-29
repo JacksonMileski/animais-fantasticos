@@ -53,6 +53,7 @@ tooltip.init();
 
 const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
 scrollAnima.init();
+// FIXME: scrollAnima.stop(); vai parar a animação ao scroll
 
 nomeDiferente();
 teste2();
