@@ -62,7 +62,7 @@ const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 const funcionamento = new Funcionamento('[data-semana]', 'aberto');
 funcionamento.init();
 
-fetchAnimais('../../animaisapi.json', '.numeros-grid');
+fetchAnimais('./animaisapi.json', '.numeros-grid');
 
 // FIXME: Agora faço o git checkout -b refatorar-accordion e dou o npm run dev, vou fazer o que preciso fazer la
 // igual fiz para scrollSuave
