@@ -1,7 +1,6 @@
 import ScrollSuave from './modules/scroll-suave.js';
 import Accordion from './modules/accordion.js';
 import TabNav from './modules/tabnav.js';
-import { teste1 as nomeDiferente, teste2 } from './modules/teste.js';
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
 import DropdownMenu from './modules/dropdown-menu.js';
@@ -62,9 +61,6 @@ const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 
 const funcionamento = new Funcionamento('[data-semana]', 'aberto');
 funcionamento.init();
-
-nomeDiferente();
-teste2();
 
 fetchAnimais('../../animaisapi.json', '.numeros-grid');
 
