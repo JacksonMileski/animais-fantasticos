@@ -6,6 +6,11 @@ export default class MenuMobile {
     this.menuList = document.querySelector(menuList);
     this.activeClass = 'active';
 
+    // TODO: o click é emulado tbm no mobile, entao quando eu clico mesmo dando touchstart no mobile, ele tbm vai dar o
+    // evento click, entao ele vai abrir e fechar o meu menu, no caso vai estar ativando dois eventos ao mesmo tempo
+    // para corrigir isso eu previno o padrao do touchstart, ao prevenir o padrao do touchstart, ele previni que o click
+    // aconteça, entao vai ficar event.preventDefault();
+
     // define touchstart e click como argumento padrão
     // de events caso o usuário não define
     if (events === undefined) this.events = ['touchstart', 'click'];
@@ -18,7 +23,8 @@ export default class MenuMobile {
     // aqui para exemplo
   }
 
-  openMenu() {
+  openMenu(event) {
+    event.preventDefault(); // para previnir o evento 'click' do desktop, e sim deixar so o touchstart
     this.menuList.classList.add(this.activeClass);
     this.menuButton.classList.add(this.activeClass);
     console.log('teste1');

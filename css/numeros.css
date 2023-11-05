@@ -4,11 +4,6 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
 }
-@media (max-width:700px){
-    .numeros-grid{
-        grid-column: 1;
-    }
-}
 
 .numeros-grid h3{
     font-family: 'Playfair Display SC';
@@ -20,4 +15,13 @@
     font-weight: bold;
     font-size: 1.5rem;
     color: #E54;
+}
+
+@media (max-width:700px){
+    .numeros-grid{
+        grid-column: 1;
+    }
+    .numeros-grid h3{
+        font-size: 1.5rem; /* tive q diminuir pq estava estourando o meu container ao diminuir muito o site*/
+    }
 }
