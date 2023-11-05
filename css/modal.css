@@ -24,7 +24,9 @@
     border: 10px solid #FB5;
     box-shadow: 0 0 0 10px white;/*FIXME: da impressao de borda, mas nao é borda, 10px ali é como a sombra se propaga se me lembro*/
     position: relative;
-    min-width: 300px;
+    max-width: 600px;
+    width: 80vw; /* 80% da tela e no maximo 600px */
+    box-sizing: border-box; /* para n dar um padding na horizontal*/
 }
 @keyframes modal {
     from{
@@ -49,10 +51,7 @@
     no inicio*/
     right: -30px;
     box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);/*4px para baixo e 4px no nivel de borrado, e nao quero chapado, por isso coloquei 0*/
-    background-color: #E54;
-    font-size: 1.2em;
-    color: white;
-    font-family: 'IBM Plex Mono', monospace;
+    background: #E54 url('../image/fechar.svg') no-repeat center center;
     cursor: pointer;
 }
 
@@ -68,11 +67,14 @@
     margin: 1rem 0 0.5rem 0;
 }
 .modal input{
+    padding: .7rem .5rem;
     width: 100%; /*100% Da largura da div pai sem contar o padding, porem acaba passando um pouco por causa do padding, por isso uso
     o border-box*/
     box-sizing: border-box;/*FIXME: IMPORTANTE O width:100%; deveria pegar somente 100% da largura do item pai, porém vai acabar estourando por
     causa do padding do .modal, entao uso o border-box para que esse input nao pega mais além do que é permitido, no caso ele só
     pode pegar 100% do width do item pai e nao o padding junto//Acho que é isso//FIXME: Eu consigo ver essa diferença diminuindo a tela*/
+    border: 2px solid #222;
+    border-radius: 0px; /* as vezes da um border-radius no mobile, entao vou tirar esse padrao */
 }
 .modal button[type="submit"]{/*FIXME: Estou selecionando por atributo*/
     display: block;/*FIXME: IMPORTANTE o meu input tem 100% de width, entao n tem espaço para o button ficar do lado, como

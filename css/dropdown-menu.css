@@ -55,3 +55,11 @@ sair, ou fora dela*/
 .dropdown-menu li a:hover{
     color: white;
 }
+
+@media (max-width: 700px) {
+    /* FIXME: para ativar meu menu direto quando tiver no mobile */
+    [data-dropdown] .dropdown-menu{
+    display: block;
+    animation: show-up .3s forwards;
+  }
+}
