@@ -57,7 +57,7 @@ export default class ScrollSuave { // FIXME: transformei em classe
   }
 
   init() {
-    if (this.linksInternos.lenth) { // FIXME: se n tiver nada da erro
+    if (this.linksInternos.length) { // FIXME: se n tiver nada da erro
       this.addLinkEvent();
       // console.log(this)
     }
