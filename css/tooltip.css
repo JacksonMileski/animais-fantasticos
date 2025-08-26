@@ -1,0 +1,17 @@
+/*FIXME: Tooltip é quando eu passo o mouse por cima de algo e aparece uma caixinha com mais informações do determinado assunto
+*/
+
+.tooltip{
+    position: absolute;/*FIXME: Se eu colocar 0 top e 0 left vai ficar no inicio
+    do meu site FIXME: Eu modifiquei no tooltip.js o top e left*/
+    z-index: 500;
+    background-color: rgba(0, 0, 0,.6);
+    box-shadow: 0 0 0 2px #FB5, 0 0 0 6px rgba(0, 0, 0,.6);/*vai dar duas box-shadow*/
+    padding: .5rem;
+    color: white;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    max-width: 170px;
+    font-size: .875rem;
+    border-radius: 2px;
+}

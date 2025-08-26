@@ -1,0 +1,56 @@
+[data-menu="button"]{
+    display: none;
+}
+@media (max-width: 700px) {
+    .js [data-menu="button"] {
+        display: flex;
+        background-color: hsl(0, 0%, 13%);
+        border:none;
+        padding: .5rem 1rem;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-family: 'IBM Plex Mono', monospace;
+        font-weight: bold;
+        color: #fff;
+        cursor: pointer;
+        margin: 10px;
+        align-items: center;
+        position: relative;/*FIXME: z-index funciona só com o position*/
+        z-index: 300;/*FIXME: z-index funciona só com o position*/
+    }
+    .js [data-menu="button"]::before{
+        margin-right: 4px;
+        content: '';
+        display: inline-block;/*para ficar no mesmo nível*/
+        height: 2px;
+        width: 12px;
+        background-color: #fff;
+        box-shadow: 0 4px #fff, 0 -4px #fff;/*vou criar uma sombra para baixo e para cima, assim
+        fazer o menu hamburguer, e o traço do meio fiz a cima*/
+        transition: transform .3s;
+    }
+
+    .js [data-menu="button"].active::before{
+        transform: rotate(90deg);/*roda 90 graus */
+    }
+
+    .js [data-menu="list"]{
+        display: none;
+        position:absolute;
+        top: 0;
+        background-color: #fb5;
+        width: 160px;
+        z-index: 200;
+        padding: 60px 0 20px 0 ;
+        box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .2);
+    }
+    .js [data-menu="list"].active{
+        display: block;
+        animation: show-right .3s forwards;/*era uma animação que criei antes esse 'show-right'*/
+    }
+    .js .dropdown-menu{
+        position: static;/*é a posição normal, vai sair o position absolute no caso, n vai ficar mais em cima
+        de todos os itens no caso pq saiu do position absolute*/
+        border: none;
+    }
+}
